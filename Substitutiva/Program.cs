@@ -35,4 +35,20 @@ app.MapGet("/api/imc/listar", () =>
     return Results.Ok(Banco.Registros);
 });
 
+
+//lsitar por classificaçao
+app.MapGet("/api/imc/listarporstatus/{classificacao}", ([FromRoute] string Classificacao,
+    [FromServices] AppDbContext ctx) =>
+{
+    IMCdados? resultado = ctx.IMCdados.Find(Classificacao);
+    if (resultado is null)
+    {
+        return Results.NotFound("nao encontrado");
+    }
+    return Results.Ok(resultado);
+});
+
+//:(
+
+
 app.Run();
