@@ -6,6 +6,6 @@ public class AppDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=nomeDoSeuBanco.db");
+        optionsBuilder.UseSqlite("Data Source=LarissaMartins.db");
     }
 }
