@@ -1,11 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 
-public class AppDbContext : DbContext
+namespace Substitutiva.Models
 {
-    public DbSet<Produto> Produtos { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public class AppDbContext : DbContext
     {
-        optionsBuilder.UseSqlite("Data Source=LarissaMartins.db");
+        public DbSet<IMCdados> IMCs { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=LarissaMartins.db");
+        }
     }
 }
