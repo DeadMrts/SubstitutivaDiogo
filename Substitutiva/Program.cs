@@ -48,6 +48,8 @@ app.MapGet("/api/imc/listarporstatus/{classificacao}", ([FromRoute] string Class
     return Results.Ok(resultado);
 });
 
+
+
 //:(
 
 
